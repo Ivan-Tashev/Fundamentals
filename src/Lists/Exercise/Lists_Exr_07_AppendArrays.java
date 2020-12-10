@@ -1,0 +1,23 @@
+package Lists.Exercise;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class Lists_Exr_07_AppendArrays {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[] input = scanner.nextLine().split("\\|");
+        List<String> result = new ArrayList<>();
+
+        for (int i = input.length -1; i >= 0 ; i--) {
+            String[] temp = input[i].split("\\s+");
+            for (String s : temp) {
+                if (!"".equals(s))
+                result.add(s);
+            }
+        }
+
+        System.out.print(String.join(" ", result));
+    }
+}
